@@ -24,8 +24,13 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-attachment:fixed;
+    /*Handles background image */
     background-image:url(../img/Background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:50%;
@@ -37,15 +42,14 @@ body {
 
 /* Portrait layout (default) */
 .app { 
-    position:fixed;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:100%;                   /* text area height */
-    width:100%;                   /* text area width */
-    text-align:center;
-    padding:0px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-300px 0px 0px -185px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+    position:fixed;             /* position in the center of the screen */                 /* text area width */
+    text-align:center; /* offset vertical: half of image height and text area height */
+    background-repeat: no-repeat;                               /* offset horizontal: half of text area width */
+}
+
+.mtchs {
+    
+    padding: 50%;
 }
 
 /* Landscape layout (with min-width) */
@@ -56,11 +60,6 @@ body {
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
-}
-
-img {
-    height: 25%;
-    width: 45%;
 }
 
 h1 {
