@@ -47,11 +47,6 @@ body {
     background-repeat: no-repeat;                               /* offset horizontal: half of text area width */
 }
 
-.imgResize {
-  text-align: center;
-  width: 10px;
-}
-
 .mtchs {
 
     text-align: center;
