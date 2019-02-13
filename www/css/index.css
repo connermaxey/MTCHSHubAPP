@@ -90,6 +90,7 @@ h1 {
 .event.received {
     display:none;
     width: 100%;
+    margin: auto;
 }
 
 @keyframes fade {
