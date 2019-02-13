@@ -45,7 +45,8 @@ body {
     position:fixed;             /* position in the center of the screen */                 /* text area width */
     text-align:center; /* offset vertical: half of image height and text area height */
     background-repeat: no-repeat;
-    width: 100%;                               /* offset horizontal: half of text area width */
+    width: 100%;
+    height: 100%;                               /* offset horizontal: half of text area width */
 }
 
 .mtchs {
