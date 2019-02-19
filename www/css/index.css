@@ -55,6 +55,10 @@ body {
     padding-top: 5%
 }
 
+.mtchssignin {
+  width: 30%;
+}
+
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:700px) {
     .app {
