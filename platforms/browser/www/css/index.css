@@ -111,6 +111,8 @@ h1 {
   background-image:url(../img/signin.png);
   text-align: center;
   margin: auto;
+  width: 20%;
+  height: 10%;
 }
 
 .blink {
