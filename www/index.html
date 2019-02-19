@@ -52,7 +52,12 @@
     <script src="https://apis.google.com/js/api.js">
       gapi.load('auth2', function(){
         gapi.auth2.init();
+      }
+      var user = document.getElementById("signin");
+      signIn.addEventListener("click", function(){
+        user.signIn();
       });
+    );
     </script>
     <script type="text/javascript">
         app.initialize();
