@@ -107,6 +107,12 @@ h1 {
     to { opacity: 1.0; }
 }
 
+#signin {
+  background-image:url(../img/signin.png);
+  text-align: center;
+  margin: auto;
+}
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
