@@ -27,13 +27,15 @@ var cordova = require('cordova');
 var isPhone = (cordova.platformId == "windows") && WinJS.Utilities.isPhone;
 var isHosted = window.location.protocol.indexOf('http') === 0;
 var localSplash = null, localSplashImage = null;
-//var bgColor = "#464646"; // default backgrond color; TDOO - read it from .appxmanifest
+var bgColor = "#464646"; // default backgrond color; TDOO - read it from .appxmanifest
+var splashImageSrc = (isHosted ? "ms-appx-web" : "ms-appx") + ":///images/" +
+    (isPhone ? "splashscreenphone.png" : "splashscreen.png");
 
 var SplashScreen = {
     setBGColor: function (cssBGColor) {
         bgColor = cssBGColor;
         if (localSplash) {
-            localSplash.style.backgroundImage = "url('../../../www/img/logo.gif')";
+            localSplash.style.backgroundColor = bgColor;
         }
     },
     show: function () {
@@ -42,12 +44,25 @@ var SplashScreen = {
         }
 
         localSplash = document.createElement("div");
-        localSplash.style.backgroundImage = "url('../../../www/img/logo.gif')";
+        localSplash.style.backgroundColor = bgColor;
         localSplash.style.position = "fixed";
         localSplash.style.top = "0";
         localSplash.style.width = "100%";
         localSplash.style.height = "100%";
 
+        localSplashImage = document.createElement("img");
+        localSplashImage.src = splashImageSrc;
+        localSplashImage.style.maxWidth = "100%";
+        localSplashImage.style.maxHeight = "100%";
+        // center horizontally
+        localSplashImage.style.margin = "0 auto";
+        localSplashImage.style.display = "block";
+        // center vertically
+        localSplashImage.style.position = "relative";
+        localSplashImage.style.top = "50%";
+        localSplashImage.style.transform = "translateY(-50%)";
+
+        localSplash.appendChild(localSplashImage);
         document.body.appendChild(localSplash);
     },
     hide: function () {
