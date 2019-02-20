@@ -43,7 +43,7 @@
             <p class="event listening">Connecting to Server</p>
             <img src="../img/MTCHSHomeText.png" alt="MTCHS" class="event received">
             <div id="signin">
-              <img src="../img/signin.png" alt="signin" class="mtchssignin">
+              <img src="../img/signin.png" alt="signin" class="mtchssignin" id ="signOn">
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
       gapi.load('auth2', function(){
         gapi.auth2.init();
       }
-      var user = document.getElementById("signin");
+      var user = document.getElementById("signOn");
       signIn.addEventListener("click", function(){
         user.signIn();
       });
