@@ -27,7 +27,7 @@ var cordova = require('cordova');
 var isPhone = (cordova.platformId == "windows") && WinJS.Utilities.isPhone;
 var isHosted = window.location.protocol.indexOf('http') === 0;
 var localSplash = null, localSplashImage = null;
-var bgColor = "#464646"; // default backgrond color; TDOO - read it from .appxmanifest
+//var bgColor = "#464646"; // default backgrond color; TDOO - read it from .appxmanifest
 var splashImageSrc = (isHosted ? "ms-appx-web" : "ms-appx") + ":///images/" +
     (isPhone ? "splashscreenphone.png" : "splashscreen.png");
 
@@ -35,7 +35,7 @@ var SplashScreen = {
     setBGColor: function (cssBGColor) {
         bgColor = cssBGColor;
         if (localSplash) {
-            localSplash.style.backgroundColor = bgColor;
+            localSplash.style.backgroundImage = "url('../../../www/img/Background.png')";
         }
     },
     show: function () {
@@ -44,7 +44,7 @@ var SplashScreen = {
         }
 
         localSplash = document.createElement("div");
-        localSplash.style.backgroundColor = bgColor;
+        localSplash.style.backgroundImage = "url('../../../www/img/Background.png')";
         localSplash.style.position = "fixed";
         localSplash.style.top = "0";
         localSplash.style.width = "100%";
